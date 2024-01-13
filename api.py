@@ -1,11 +1,13 @@
 import PyPDF2
 import os
 import tensorflow
+from flask_cors import CORS
 
 from ml import LLM
 from flask import Flask, request
 
 app = Flask(__name__)
+CORS(app)
 
 # implementing the ML models
 llm = LLM("question-answering")
